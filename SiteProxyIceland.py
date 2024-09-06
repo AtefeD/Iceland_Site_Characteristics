@@ -105,7 +105,6 @@ dt_Vs30WA07 = Vs30WA07tif.read(1)
 ## slope-based inferredVs30 by Weatherill et al. 2023 
 # edit the path according to your defined address
 Vs30W23tif = rasterio.open('D:\OneDrive\\OneDrive - Menntaský\\Atefe PC\\Iceland-GIS files\W23_eSRm20\\European_Site_Model_Data\\layers\\Vs30 from slope (m_s).tif')
-print(Vs30W23tif.bounds)
 print(Vs30W23tif.nodata)
 dt_Vs30W23 = Vs30W23tif.read(1)
 
@@ -115,22 +114,13 @@ SAw23_path = 'D:\OneDrive\OneDrive - Menntaský\\Atefe PC\\Iceland-GIS files\\W2
 file_SAw23_30hz = rasterio.open(SAw23_path + 'amplification_0.033.tif')
 print(file_SAw23_30hz.bounds)  
 file_SAw23_10hz = rasterio.open(SAw23_path + 'amplification_0.1.tif')
-print(file_SAw23_10hz.bounds)
 file_SAw23_7hz = rasterio.open(SAw23_path + 'amplification_0.14.tif')
-print(file_SAw23_7hz.bounds)
 file_SAw23_5hz = rasterio.open(SAw23_path + 'amplification_0.2.tif')
-print(file_SAw23_5hz.bounds)
 file_SAw23_2hz = rasterio.open(SAw23_path + 'amplification_0.5.tif')
-print(file_SAw23_2hz.bounds)
 file_SAw23_1hz = rasterio.open(SAw23_path + 'amplification_1.0.tif')
-print(file_SAw23_1hz.bounds)
 file_SAw23_pga = rasterio.open(SAw23_path + 'amplification_pga.tif')
-print(file_SAw23_pga.bounds)
-
-print(file_SAw23_pga.nodata)
 print(file_SAw23_5hz.crs) #coord sys EPSG
-print(file_SAw23_5hz.nodata) 
-print(file_SAw23_5hz.shape) 
+
 
 dt_SAw23_30hz = file_SAw23_30hz.read(1)
 dt_SAw23_10hz = file_SAw23_10hz.read(1)
@@ -143,7 +133,6 @@ dt_SAw23_pga = file_SAw23_pga.read(1)
 ## slope-GEBCO14 in Weatherill et al. 2023 
 # edit the path according to your defined address
 slopeW23tif = rasterio.open('D:\OneDrive\OneDrive - Menntaský\Atefe PC\\Iceland-GIS files\\W23_eSRm20\\European_Site_Model_Data\\layers\\Slope (m_m).tif')
-print(slopeW23tif.bounds)
 print(slopeW23tif.nodata)
 dt_W23slop = slopeW23tif.read(1)
 
@@ -151,7 +140,6 @@ dt_W23slop = slopeW23tif.read(1)
 # edit the path according to your defined address
 regolith_path = 'D:\OneDrive\\OneDrive - Menntaský\\Atefe PC\\Iceland-GIS files\\global geomorph\\Global_Soil_Regolith_Sediment_1304\\data\\'
 file_sedt = rasterio.open(regolith_path + 'average_soil_and_sedimentary-deposit_thickness.tif')
-print(file_sedt.bounds)  
 dt_sedt = file_sedt.read(1)
 
 # %% Extract the site proxies from large-scale studies at 34 stations in SISZ, Iceland
@@ -254,7 +242,6 @@ ocean[SP_df['Vs30_usgs'].astype(str)=='nan'] = True
 SP_df['ocean_water'] = ocean
 
 
-
 # %% European Geological era -Vilanovaet al 2018- add ERA0 attribute to our  dataframe
 # edit the path according to your defined address
 gdf_EuGeo_poly = gpd.read_file("D:\OneDrive\OneDrive - Menntaský\Atefe PC\Iceland-GIS files\Vilanova_Geo_W23\GEOL_V8_ERA2.shp")
@@ -266,7 +253,6 @@ SP_df.coordinates = SP_df.coordinates.apply(Point)
 gdf_points = gpd.GeoDataFrame(SP_df, geometry='coordinates', crs=4326)
 
 sjoin_EuGeo = gpd.sjoin(gdf_points, gdf_EuGeo_poly, how='left') #add EuGeo 
-print(sjoin_EuGeo)
 SP_df2 = pd.DataFrame(sjoin_EuGeo) # gdf to df
 
 # remove unnecessary attributes 
@@ -287,8 +273,7 @@ SP_df['EuGeo_ID'] = eraNum
 print(SP_df[ ( SP_df['Vs30_W23']== 2)]['longitudes'].count()) # count values in each Vs30-class
 # dict_Vs30_W23 = {2:[180, 239], 3:[240, 299], 4:[300, 359], 5:[360, 489], 6:[490, 619], 7:[620, 759] , 8: [760, 2500] }
 
-
-    
+   
         
 
 # %% proxy-based predictions by Loviknes et al. 2024
