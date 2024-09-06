@@ -12,7 +12,7 @@ The SiteProxyIceland.py code specifically designed for Iceland but can be easily
 In case of any questions or comments, do not hesitate to contact me via  atefe@hi.is
 <br/>
 <br/>
-
+## Initial steps:
 Before running the code, download the following data: 
 <br/>1- The 30-arcsecond gridded thickness of geomorphological sedimentary deposit layer estimated by Pelletier et al. (2016) can be downloaded from https://daac.ornl.gov/cgi-bin/dsviewer.pl?ds_id=1304 
 <br/>2- The slope-based inferred V_S30 raster file developed by Wald and Allen (2007) can be downloaded from the U.S. Geological Survey (USGS) via https://earthquake.usgs.gov/static/lfs/data/vs30/vs30.zip 
