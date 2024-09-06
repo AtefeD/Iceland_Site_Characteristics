@@ -1,10 +1,10 @@
 """
-This script creates a databse of site proxies and proxy-based site amplification values for stations in SISZ, Iceland from 
+This script creates a databse of site proxies and proxy-based site amplification values for stations in SISZ, Iceland from both local icelandic and large-scale European models.
 
 Local studies: 
 # 1- our proposed site amplification units and the corresponding freq-dependent site amplification values (Darzi et al. 2024, SDEE)
 # 2- empirical original amplification values from local studies (Rahpeyma et al. 2023, Rea23)
-# 3- geology-based local Vs30 estimates [Vogfjörd et al. (2010), Vea10]
+# 3- geology-based local Vs30 estimates [see (Darzi et al. 2024, SDEE)]
 
 Large-scale, non-Icelandic, studies: 
 # 1- site proxies e.g., slope-based Vs30 from USGS and ESRM20, Slope proxy, Geomorphological Sedimentray thickness (GST) proxy
@@ -14,15 +14,14 @@ Large-scale, non-Icelandic, studies:
 first download "coefficient_table.csv" file from "https://zenodo.org/records/10686867" and put it in the root folder. 
 
 *** References:
-    1- Darzi 
-    2- Rahpeyma, 
+ Darzi Atefe, Halldorsson Benedikt, Cotton Fabrice, Rahpeyma Sahar (2024) Nationwide frequency-dependent seismic site amplification models for Iceland, Soil Dynamics and Earthquake Engineering,https://doi.org/10.1016/j.soildyn.2024.108798
     
 If you use this code, please cite Darzi et al. (2024). 
    
 
 @author: Atefe Darzi (atefe@hi.is) 
 Date: 06.2023- GFZ
-Last update: 04.2024 at UICE-IMO
+Last update: 05.2024 at UICE
 
 """
 
@@ -59,8 +58,8 @@ IceSPfile_path = os.path.join(path, '.\LocalSiteProxies_SISZstations.csv')
 SP_df0 = pd.read_csv(IceSPfile_path)
 
 SP_df0['Soil_type'] #--> traditional site classes in Iceland
-SP_df0['SAFER_unit'] #--> geoological units associated with local Vs30 estimates, see fig3 of Darzi et al. 2024
-SP_df0['SAFER_Vs30'] #-->  geological-based Vs30 estimate (Vogfjörd et al. (2010)), see fig3 of Darzi et al. 2024
+SP_df0['LocalGeo_unit'] #--> geoological units associated with local Vs30 estimates, see fig3 of Darzi et al. 2024
+SP_df0['Local_Vs30'] #-->  geological-based Vs30 estimate (Vogfjörd et al. (2010)), see fig3 of Darzi et al. 2024
 
 
 SP_df0['GeoSiteAmp'] #--> the proposed geology-based site amplification units, see fig5 of Darzi et al. 2024
