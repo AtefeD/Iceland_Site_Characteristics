@@ -4,7 +4,7 @@ This repository provides Python code for computing and mapping the site proxies 
 Full detail characteristics of the Icelandic recording stations in SISZ including geological units, site amplification factors, the δS2S_s statistic along with all associated site effect proxies at each station are given as well. 
 
 ## Reference:
-Darzi Atefe, Halldorsson Benedikt, Cotton Fabrice, Rahpeyma Sahar (2024) Nationwide frequency-dependent seismic site amplification models for Iceland, Soil Dynamics and Earthquake Engineering,https://doi.org/10.1016/j.soildyn.2024.108798
+Darzi Atefe, Halldorsson Benedikt, Cotton Fabrice, Rahpeyma Sahar (2024) Nationwide frequency-dependent seismic site amplification models for Iceland, Soil Dynamics and Earthquake Engineering, https://doi.org/10.1016/j.soildyn.2024.108798
 <br/>
 If you use the codes, please cite the relevant article appropriately.
 
